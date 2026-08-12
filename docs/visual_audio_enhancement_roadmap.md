@@ -21,7 +21,7 @@ change.
 
 ## Current implemented baseline
 
-- `src/bin/hs-mgt-game-gui.rs` starts a loopback Axum host; the host owns session
+- `src/bin/vital-margin-gui.rs` starts a loopback Axum host; the host owns session
   truth, action validation/order, transitions, history, replay, debriefs, and
   durable checkpoint discovery/restoration.
 - The GUI presents `stabilization-v1`, `competitive-regional-v1`, and

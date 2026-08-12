@@ -206,7 +206,7 @@
     },
     "measurements": {
       "viewport": {"width": 1024, "height": 768},
-        "live_source_bytes": 449610,
+        "live_source_bytes": 449574,
       "dom_elements": 818,
       "svg_elements": 4,
       "shell_reload_samples_ms": [52, 49, 50, 52, 50],

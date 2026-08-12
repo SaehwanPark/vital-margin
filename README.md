@@ -1,12 +1,12 @@
-# Health Policy Strategy Game
+# Vital Margin
 
-Health Policy Strategy Game is a fictional, deterministic strategy game about
+Vital Margin is a fictional, deterministic strategy game about
 leading a nonprofit US health system while finance, workforce, policy,
 community, and market pressures pull in different directions. You make the
 decision; the host reports what was visible, what changed, and what remains
 uncertain.
 
-The current release is a playable Rust prototype at v0.14.13. It is distributed
+The current release is a playable Rust prototype at v0.14.14. It is distributed
 as source code: there is no installer or prebuilt binary. The GUI is the easiest
 way to see the game, while the CLI remains a complete alternative.
 
@@ -19,7 +19,7 @@ prerequisites using the [beginner installation guide](docs/guides/installation.m
 then:
 
 ```bash
-cargo run --bin hs-mgt-game-gui
+cargo run --bin vital-margin-gui
 ```
 
 Keep that terminal open and visit the printed URL, normally
@@ -82,9 +82,9 @@ checkpoint cautions, and recovery FAQ—is in
 - **Connection refused:** the GUI host is not running or compilation has not
   finished; keep the Cargo terminal open and use the exact printed URL.
 - **The page shows demo data:** you opened `gui/index.html` directly. Start
-  `cargo run --bin hs-mgt-game-gui` for live play.
+  `cargo run --bin vital-margin-gui` for live play.
 - **Port 7878 is busy:** stop the other GUI host or use
-  `cargo run --bin hs-mgt-game-gui -- --bind 127.0.0.1:8787`.
+  `cargo run --bin vital-margin-gui -- --bind 127.0.0.1:8787`.
 - **A saved checkpoint seems missing:** checkpoints belong to the host and
   source checkout; use the GUI's saved-checkpoint finder before starting over.
 

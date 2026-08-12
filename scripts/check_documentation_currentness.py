@@ -76,7 +76,7 @@ CURRENT_FILES = {
     "checkpoint archives",
     "actor-visible",
   ),
-  "docs/harness/health-policy-strategy-game/team-spec.md": (
+  "docs/harness/vital-margin/team-spec.md": (
     "reference CLI",
     "host-backed loopback GUI",
     "AI-native",

@@ -1,4 +1,4 @@
-# Health Policy Strategy Game Agent Harness
+# Vital Margin Agent Harness
 
 ## Domain Summary
 
@@ -73,7 +73,7 @@ before synthesis.
 
 | Role | Responsibility | Reusable skill | Writes |
 | --- | --- | --- | --- |
-| Orchestrator | Route work through the phase pipeline and preserve handoffs | `.agents/skills/hs-mgt-game-orchestrator/SKILL.md` | `_workspace/00_input/request-summary.md`, `_workspace/final/handoff.md` |
+| Orchestrator | Route work through the phase pipeline and preserve handoffs | `.agents/skills/vital-margin-orchestrator/SKILL.md` | `_workspace/00_input/request-summary.md`, `_workspace/final/handoff.md` |
 | Evidence Mapper | Convert research and precedent material into assumptions, mechanisms, and unresolved questions | `.agents/skills/hs-policy-evidence-mapper/SKILL.md` | `_workspace/01_evidence_map.md` |
 | Mechanism Designer | Shape actor, policy, scenario, and causal mechanics for the first vertical slice | `.agents/skills/hs-policy-mechanism-designer/SKILL.md` | `_workspace/02_mechanism_design.md` |
 | Domain QA Reviewer | Review proposed work against project-specific risks and phase gates | `.agents/skills/hs-policy-domain-qa/SKILL.md` | `_workspace/03_domain_qa.md` |

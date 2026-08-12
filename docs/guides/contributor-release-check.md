@@ -9,7 +9,7 @@ python3 scripts/check_release_metadata.py
 
 The check compares the modified `x.y.z` package version in `Cargo.toml` with:
 
-- the `hs-mgt-game` package entry in `Cargo.lock`;
+- the `vital-margin` package entry in `Cargo.lock`;
 - the public milestone line in `README.md`; and
 - the first version heading in `CHANGELOG.md`.
 

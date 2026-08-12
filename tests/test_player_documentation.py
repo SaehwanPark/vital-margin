@@ -29,7 +29,7 @@ class PlayerDocumentationTests(unittest.TestCase):
     hero = self.readme.index("gui-competitive-brief.png")
     play_now = self.readme.index("## Play now")
     self.assertLess(hero, play_now)
-    self.assertIn("cargo run --bin hs-mgt-game-gui", self.readme)
+    self.assertIn("cargo run --bin vital-margin-gui", self.readme)
     self.assertIn("Stabilization tutorial", self.readme)
     self.assertIn("seed `42`", self.readme)
     self.assertNotIn("imgur", self.readme.lower())

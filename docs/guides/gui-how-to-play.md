@@ -59,13 +59,13 @@ checkpoints do not transfer between them.
 2. Run:
 
    ```bash
-   cargo run --bin hs-mgt-game-gui
+   cargo run --bin vital-margin-gui
    ```
 
 3. Keep the terminal running. After compilation, it prints a line like:
 
    ```text
-   Health Policy Strategy Game GUI: http://127.0.0.1:7878
+   Vital Margin GUI: http://127.0.0.1:7878
    ```
 
 4. Open that URL in your browser.
@@ -249,7 +249,7 @@ checkpoints remain readable as a migration fallback.
 If port 7878 is busy, choose another loopback port:
 
 ```bash
-cargo run --bin hs-mgt-game-gui -- --bind 127.0.0.1:8787
+cargo run --bin vital-margin-gui -- --bind 127.0.0.1:8787
 ```
 
 Open the exact URL printed by that process.
@@ -269,7 +269,7 @@ port command above.
 ### I see demo data and Start says no host is configured
 
 You opened `gui/index.html` directly or used a generic static file server. Stop
-that server and run `cargo run --bin hs-mgt-game-gui`; only the Rust GUI host
+that server and run `cargo run --bin vital-margin-gui`; only the Rust GUI host
 injects the live adapter.
 
 ### The seed is rejected

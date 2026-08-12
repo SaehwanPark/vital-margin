@@ -108,7 +108,7 @@ The first run compiles the game and downloads dependencies. From the folder
 containing `Cargo.toml`, start the recommended GUI tutorial:
 
 ```bash
-cargo run --bin hs-mgt-game-gui
+cargo run --bin vital-margin-gui
 ```
 
 Leave that terminal open. When it prints a URL, open the URL in a Chromium
@@ -193,7 +193,7 @@ administrator. No game files are changed by a failed download.
 ### The browser says “connection refused”
 
 The Rust GUI host is not running, is still compiling, or you opened the wrong
-address. Restart `cargo run --bin hs-mgt-game-gui`, wait for its printed URL,
+address. Restart `cargo run --bin vital-margin-gui`, wait for its printed URL,
 keep that terminal open, and open the exact URL.
 
 ### The port is occupied (“address already in use”)
@@ -201,7 +201,7 @@ keep that terminal open, and open the exact URL.
 Stop the older GUI process, or choose another loopback port:
 
 ```bash
-cargo run --bin hs-mgt-game-gui -- --bind 127.0.0.1:8787
+cargo run --bin vital-margin-gui -- --bind 127.0.0.1:8787
 ```
 
 Open the URL printed by that process.
@@ -209,7 +209,7 @@ Open the URL printed by that process.
 ### I opened `gui/index.html` and see demo data
 
 That file is a static demonstration page. It does not connect to the Rust
-host. Close it and launch `cargo run --bin hs-mgt-game-gui`; live play starts
+host. Close it and launch `cargo run --bin vital-margin-gui`; live play starts
 only at the printed loopback URL.
 
 ### My browser is unsupported

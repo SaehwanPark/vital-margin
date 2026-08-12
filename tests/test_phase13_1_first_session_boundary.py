@@ -158,7 +158,7 @@ class Phase131FirstSessionBoundaryTests(unittest.TestCase):
       .split()
     )
     for marker in (
-      "cargo run --bin hs-mgt-game-gui",
+      "cargo run --bin vital-margin-gui",
       "Start competitive regional session",
       "Competitive sessions track seven action handoffs",
       "five campaign-coverage handoffs",

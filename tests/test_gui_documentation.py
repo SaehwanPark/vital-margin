@@ -19,7 +19,7 @@ class GuiDocumentationTests(unittest.TestCase):
 
   def test_quickstarts_agree_on_command_url_and_campaign(self):
     for text in (self.readme, self.how_to, self.gui, self.gui_readme):
-      self.assertIn("cargo run --bin hs-mgt-game-gui", text)
+      self.assertIn("cargo run --bin vital-margin-gui", text)
       self.assertIn("competitive-regional-v1", text)
     for text in (self.readme, self.how_to, self.gui):
       self.assertIn("http://127.0.0.1:7878", text)

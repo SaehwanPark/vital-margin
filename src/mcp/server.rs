@@ -217,8 +217,8 @@ impl ServerHandler for McpGameServer {
     ServerInfo::new(ServerCapabilities::builder().enable_tools().build())
       .with_server_info({
         let mut implementation =
-          Implementation::new("hs-mgt-game-mcp", env!("CARGO_PKG_VERSION"));
-        implementation.title = Some("Health Policy Strategy Game MCP".to_string());
+          Implementation::new("vital-margin-mcp", env!("CARGO_PKG_VERSION"));
+        implementation.title = Some("Vital Margin MCP".to_string());
         implementation.description =
           Some("Local MCP interface for autonomous play of bounded campaign sessions.".to_string());
         implementation

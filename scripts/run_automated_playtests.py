@@ -506,7 +506,7 @@ def strategies_for_target(target):
 
 def run_tests(json_output=None, target=TARGET_BASELINE):
   subprocess.run(
-    ["cargo", "build", "--quiet", "--bin", "hs-mgt-game-mcp"],
+    ["cargo", "build", "--quiet", "--bin", "vital-margin-mcp"],
     check=True
   )
 

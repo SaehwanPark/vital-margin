@@ -13,7 +13,7 @@ PROBE_PATH = ROOT / "scripts" / "check_firefox_runtime_smoke.py"
 BROWSER_POLICY_PATH = ROOT / "assets" / "browser-compatibility-policy.json"
 
 EXPECTED_SHELL = {
-  "title": "Health Policy Strategy Game — Executive Desktop",
+  "title": "Vital Margin — Executive Desktop",
   "ready": "complete",
   "start_control": True,
   "demo_fixture": True,

@@ -62,4 +62,4 @@ Write `_workspace/01_evidence_map.md` with these sections:
 - `docs/proposal.md`
 - `docs/roadmap.md`
 - `docs/design_principles.md`
-- `docs/harness/health-policy-strategy-game/team-spec.md`
+- `docs/harness/vital-margin/team-spec.md`

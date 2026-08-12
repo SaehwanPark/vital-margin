@@ -61,7 +61,7 @@ the explicit post-run surface authorizes it.
 
 ## Loopback GUI host
 
-`src/bin/hs-mgt-game-gui.rs` starts `src/gui_server.rs`, an Axum loopback-only
+`src/bin/vital-margin-gui.rs` starts `src/gui_server.rs`, an Axum loopback-only
 host. It embeds the current `gui/` module graph and serves same-origin routes
 under `/api/v1/`. The host owns `GameSessionStore`, session IDs, campaign
 creation, validation, transitions, history, replay, debriefs, checkpoint

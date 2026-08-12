@@ -73,7 +73,7 @@ cargo run
 For the live GUI:
 
 ```bash
-cargo run --bin hs-mgt-game-gui
+cargo run --bin vital-margin-gui
 ```
 
 The live GUI supports `competitive-regional-v1`, `stabilization-v1`, and

@@ -75,7 +75,7 @@ pub fn parse_bind_args(args: impl IntoIterator<Item = String>) -> Result<SocketA
           .ok_or_else(|| "--bind requires a loopback IP address and port".to_string())?;
       }
       "--help" | "-h" => {
-        return Err(format!("usage: hs-mgt-game-gui [--bind {DEFAULT_BIND}]"));
+        return Err(format!("usage: vital-margin-gui [--bind {DEFAULT_BIND}]"));
       }
       _ => return Err(format!("unknown argument: {argument}")),
     }
@@ -102,7 +102,7 @@ pub async fn run_gui_server(address: SocketAddr) -> Result<(), Box<dyn std::erro
   ensure_loopback(address).map_err(std::io::Error::other)?;
   let listener = tokio::net::TcpListener::bind(address).await?;
   let local = listener.local_addr()?;
-  println!("Health Policy Strategy Game GUI: http://{local}");
+  println!("Vital Margin GUI: http://{local}");
   let save_path = crate::cli::gui_competitive_session_save_path();
   println!(
     "Keep this terminal running. Explicit GUI checkpoints use the host archive rooted at {}.",

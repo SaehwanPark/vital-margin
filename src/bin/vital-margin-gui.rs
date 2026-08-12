@@ -1,4 +1,4 @@
-use hs_mgt_game::gui_server::{parse_bind_args, run_gui_server};
+use vital_margin::gui_server::{parse_bind_args, run_gui_server};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

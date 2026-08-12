@@ -663,7 +663,7 @@ def print_live_capture_batch_markdown(batch):
   print("- Do not use a single seed, difficulty, or scripted persona batch to justify runtime tuning.\n")
 
 def main():
-  parser = argparse.ArgumentParser(description="Strategy-Space Diagnostics for Health Policy Strategy Game")
+  parser = argparse.ArgumentParser(description="Strategy-Space Diagnostics for Vital Margin")
   parser.add_argument("inputs", nargs="+", help="Paths to replay JSON files or directories containing replay files")
   parser.add_argument("--output", help="Output file path (saves as markdown; defaults to printing to stdout)")
   

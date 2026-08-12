@@ -2,7 +2,7 @@
 // Regenerate with: python3 scripts/generate_asset_credits.py --runtime
 export const ASSET_CREDITS = Object.freeze({
   "schema_version": "asset-credits-v1",
-  "package_version": "0.14.13",
+  "package_version": "0.14.14",
   "registry_source": "assets/registry/*.json",
   "third_party_release_count": 0,
   "entries": [

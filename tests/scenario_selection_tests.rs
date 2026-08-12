@@ -1,9 +1,9 @@
-use hs_mgt_game::model::{Difficulty, default_competitive_ruleset, default_ruleset};
-use hs_mgt_game::scenario::{
+use std::fs;
+use vital_margin::model::{Difficulty, default_competitive_ruleset, default_ruleset};
+use vital_margin::scenario::{
   load_scenario_file, validate_competitive_scenario, validate_regional_affiliation_scenario,
   validate_stabilization_scenario,
 };
-use std::fs;
 
 #[test]
 fn test_load_non_existent_file() {
@@ -98,7 +98,7 @@ fn test_load_valid_regional_affiliation_scenario() {
   assert_eq!(scenario.campaign_id, "regional-affiliation-v1");
   validate_regional_affiliation_scenario(
     &scenario,
-    &hs_mgt_game::model::default_affiliation_ruleset(),
+    &vital_margin::model::default_affiliation_ruleset(),
   )
   .expect("validate affiliation");
 }

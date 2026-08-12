@@ -145,7 +145,7 @@ it does not establish causal marginal effects, dominance, balance, calibration,
 human learning, or policy validity.
 
 ### Expected Output
-The script builds `hs-mgt-game-mcp`, launches the local stdio binary, runs both
+The script builds `vital-margin-mcp`, launches the local stdio binary, runs both
 campaigns for all four profiles across seeds `42`, `43`, and `44`, and
 prints per-seed comparison tables plus compact metric ranges. Stabilization
 metrics are parsed from the committed debrief. Competitive end-session debriefs
@@ -411,7 +411,7 @@ full 24-month competitive campaign at Hard difficulty. This extends the general
 free-form procedure above. This slice omits stabilization and Normal difficulty;
 it is competitive Hard only.
 
-1. Build the MCP server: `cargo build --bin hs-mgt-game-mcp`.
+1. Build the MCP server: `cargo build --bin vital-margin-mcp`.
 2. Start `competitive-regional-v1` with `difficulty=hard` and seed `42` unless
    the findings question requires seed variation.
 3. Use deterministic observation-heuristic policies or manual command entry
