@@ -1,5 +1,5 @@
-use hs_mgt_game::competitive::build_month1_resolution_history;
-use hs_mgt_game::model::Difficulty;
+use vital_margin::competitive::build_month1_resolution_history;
+use vital_margin::model::Difficulty;
 
 #[test]
 fn competitive_seed42_month1_preset_resolution_is_stable() {
@@ -34,9 +34,9 @@ fn competitive_seed42_month1_preset_resolution_is_stable() {
 
 #[test]
 fn generate_mock_replay_fixture() {
-  use hs_mgt_game::competitive::build_multi_month_resolution_history;
   use std::fs;
   use std::path::Path;
+  use vital_margin::competitive::build_multi_month_resolution_history;
 
   let history = build_multi_month_resolution_history(Difficulty::Normal, 42, 24)
     .expect("build multi month history");

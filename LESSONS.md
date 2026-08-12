@@ -1,5 +1,18 @@
 # Lessons Learned
 
+## Keep presentation and symbol naming unified across crate, binaries, and harness
+
+- Context: Transitioning from generic/legacy working titles to "Vital Margin"
+  requires aligning display titles, binary targets, crate module paths, agent
+  skills, and documentation links simultaneously.
+- Risk: Divergent binary names (`hs-mgt-game-gui` vs `vital-margin-gui`) or broken
+  harness references cause link validation or automated test failures.
+- Resolution: Establish a clear dual rule ("Vital Margin" for human-facing
+  display text; `vital-margin` / `vital_margin` for crate, binary, and symbol
+  names) and update all links and harnesses atomically.
+- Prevention: Run automated documentation link checkers, release metadata
+  validators, and full test suites after any rebranding.
+
 ## Keep playtest commits paired with host history evidence
 
 - Context: a stabilization playtest fixture recorded an accepted command and
@@ -2121,7 +2134,7 @@ agents meaningful time. Keep entries factual, concise, and tied to prevention.
   boundary records, not as detailed process or architecture commitments.
 - Prevention: Before major changes, read `README.md`, `docs/proposal.md`,
   `docs/roadmap.md`, `docs/design_principles.md`, and
-  `docs/harness/health-policy-strategy-game/team-spec.md`; document deferred
+  `docs/harness/vital-margin/team-spec.md`; document deferred
   conventions instead of filling them in prematurely.
 
 ## First Engine Proof Should Stay Scripted

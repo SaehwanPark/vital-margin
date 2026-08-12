@@ -18,7 +18,7 @@ from urllib.parse import urlparse
 DEFAULT_URL = "http://127.0.0.1:7878/"
 DEFAULT_PORT = 2828
 LOOPBACK_HOSTS = {"127.0.0.1", "::1"}
-EXPECTED_PAGE_TITLE = "Health Policy Strategy Game — Executive Desktop"
+EXPECTED_PAGE_TITLE = "Vital Margin — Executive Desktop"
 EXPECTED_COMPETITIVE_TURNS = 24
 EXPECTED_CAMPAIGN_STAGE_COUNTS = {
   "stabilization-v1": 5,

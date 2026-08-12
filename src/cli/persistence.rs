@@ -11,11 +11,11 @@ use crate::model::{
 
 pub fn config_dir() -> PathBuf {
   if let Ok(xdg) = std::env::var("XDG_CONFIG_HOME") {
-    PathBuf::from(xdg).join("hs-mgt-game")
+    PathBuf::from(xdg).join("vital-margin")
   } else if let Ok(home) = std::env::var("HOME") {
-    PathBuf::from(home).join(".config").join("hs-mgt-game")
+    PathBuf::from(home).join(".config").join("vital-margin")
   } else {
-    PathBuf::from(".config").join("hs-mgt-game")
+    PathBuf::from(".config").join("vital-margin")
   }
 }
 

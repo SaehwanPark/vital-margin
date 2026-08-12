@@ -18,7 +18,7 @@ CANONICAL_PATHS = (
   "ARCHITECTURE.md",
   "docs/visual_audio_enhancement_roadmap.md",
   "docs/decision-records/0014-ai-native-gui-and-browser-boundary.md",
-  "docs/harness/health-policy-strategy-game/team-spec.md",
+  "docs/harness/vital-margin/team-spec.md",
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 MACHINE_LOCAL_PATH = re.compile(r"file:///|/(?:Users|home)/[^/\s]+/")

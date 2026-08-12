@@ -33,10 +33,10 @@ def normalize_tool_error(error_payload):
 class McpClient:
   def __init__(self, bin_path=None, timeout_seconds=10):
     if bin_path is None:
-      bin_path = os.environ.get("HS_MGT_GAME_MCP_BIN")
+      bin_path = os.environ.get("VITAL_MARGIN_MCP_BIN") or os.environ.get("HS_MGT_GAME_MCP_BIN")
       if bin_path is None:
-        local_bin = "./target/debug/hs-mgt-game-mcp"
-        bin_path = local_bin if os.path.exists(local_bin) else "cargo run --quiet --bin hs-mgt-game-mcp"
+        local_bin = "./target/debug/vital-margin-mcp"
+        bin_path = local_bin if os.path.exists(local_bin) else "cargo run --quiet --bin vital-margin-mcp"
     self.bin_path = bin_path
     self.proc = None
     self.msg_id = 0

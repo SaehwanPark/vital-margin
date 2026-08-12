@@ -1,6 +1,6 @@
-use hs_mgt_game::cli::{describe_cli_error, eprint_error, run};
-use hs_mgt_game::model::SessionOutcome;
 use std::path::PathBuf;
+use vital_margin::cli::{describe_cli_error, eprint_error, run};
+use vital_margin::model::SessionOutcome;
 
 fn main() {
   let mut args = std::env::args().skip(1);
@@ -9,8 +9,8 @@ fn main() {
   while let Some(arg) = args.next() {
     match arg.as_str() {
       "-h" | "--help" => {
-        println!("Health Policy Strategy Game CLI");
-        println!("Usage: hs-mgt-game [OPTIONS]");
+        println!("Vital Margin CLI");
+        println!("Usage: vital-margin [OPTIONS]");
         println!();
         println!("Options:");
         println!("  -s, --scenario <PATH>  Path to a custom TOML scenario file to load");

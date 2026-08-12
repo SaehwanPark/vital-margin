@@ -1,4 +1,4 @@
-# Health Policy Strategy Game
+# Vital Margin
 ## Initial Game Development Proposal
 
 **Status:** Canonical project proposal  

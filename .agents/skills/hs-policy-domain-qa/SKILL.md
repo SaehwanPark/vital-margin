@@ -1,25 +1,23 @@
 ---
 name: hs-policy-domain-qa
-description: Review Health Policy Strategy Game artifacts for project-specific simulation, policy, education, scope, and determinism risks.
+description: Review Vital Margin artifacts for project-specific simulation, policy, education, scope, and determinism risks.
 ---
 
-# HS Policy Domain QA
+# Health-Policy Domain QA
 
 ## When to Use
 
-- Use this skill to review project-specific docs, mechanism designs, scenario
-  specs, or code changes against the health-policy strategy game principles.
-- Use it after a mechanism or implementation artifact is produced and before
-  treating the work as ready.
-- Do not use it as a replacement for global code review, Rust quality review, or
-  release review.
+- Use this skill to review mechanism ledgers, scenario specs, policy claims,
+  and educational debrief logic against domain evidence and project guardrails.
+- Use it to protect determinism, explicit stochastic inputs, and partial
+  observability.
+- Do not use it for generic Rust style or release bookkeeping. Use global skills
+  for those.
 
 ## Required Inputs
 
-- Original user request.
-- Produced artifact or changed files.
-- Relevant `_workspace/` handoffs.
-- Canonical docs and `docs/harness/health-policy-strategy-game/team-spec.md`.
+- Draft artifact or code under review.
+- Canonical docs and `docs/harness/vital-margin/team-spec.md`.
 - Verification output when code changed.
 
 ## Workflow
@@ -61,4 +59,4 @@ Write `_workspace/03_domain_qa.md` with these sections:
 - `docs/proposal.md`
 - `docs/roadmap.md`
 - `docs/design_principles.md`
-- `docs/harness/health-policy-strategy-game/team-spec.md`
+- `docs/harness/vital-margin/team-spec.md`

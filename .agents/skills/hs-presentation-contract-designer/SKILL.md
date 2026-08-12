@@ -1,6 +1,6 @@
 ---
 name: hs-presentation-contract-designer
-description: Define actor-visible visual, audio, asset, and consequence-presentation contracts for the Health Policy Strategy Game before implementation.
+description: Define actor-visible visual, audio, asset, and consequence-presentation contracts for Vital Margin before implementation.
 ---
 
 # HS Presentation Contract Designer
@@ -83,5 +83,5 @@ Write `_workspace/02_presentation_contract.md` with these sections:
 - `docs/visual_audio_enhancement_roadmap.md`
 - `docs/design_principles.md`
 - `ARCHITECTURE.md`
-- `docs/harness/health-policy-strategy-game/team-spec.md`
+- `docs/harness/vital-margin/team-spec.md`
 - `LESSONS.md`

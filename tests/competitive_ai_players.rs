@@ -1,7 +1,7 @@
-use hs_mgt_game::competitive::{
+use vital_margin::competitive::{
   compute_ai_batch, genesis_competitive_world_with_ruleset, month1_batches_with_ai,
 };
-use hs_mgt_game::model::{Difficulty, default_competitive_ruleset};
+use vital_margin::model::{Difficulty, default_competitive_ruleset};
 
 #[test]
 fn ai_batches_are_deterministic_for_same_seed_and_genesis() {

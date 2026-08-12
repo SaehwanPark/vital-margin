@@ -44,7 +44,7 @@ python3 scripts/check_release_metadata.py
 python3 -m unittest discover -s tests
 ```
 
-For a live GUI smoke, run `cargo run --bin hs-mgt-game-gui`, open the printed
+For a live GUI smoke, run `cargo run --bin vital-margin-gui`, open the printed
 `http://127.0.0.1:7878` URL in Chromium evergreen, and use seed `42`. Stop the
 host with Ctrl-C. Read [ARCHITECTURE](../ARCHITECTURE.md), the
 [versioning policy](reference/versioning-policy.md), and the
@@ -103,7 +103,7 @@ or policy validity. Those limits are recorded honestly but do not stop routine
 technical progression; unsafe or unverifiable assets remain excluded.
 
 See the [playtesting protocol](validation/playtesting.md), [MCP playtesting
-guide](guides/mcp-playtesting-guide.md), and repository-local [agent harness](harness/health-policy-strategy-game/team-spec.md).
+guide](guides/mcp-playtesting-guide.md), and repository-local [agent harness](harness/vital-margin/team-spec.md).
 
 ## Player guides
 

@@ -1,4 +1,4 @@
-# Health Policy Strategy Game Roadmap
+# Vital Margin Roadmap
 
 **Status:** Canonical current direction
 **Reviewed:** 2026-08-02

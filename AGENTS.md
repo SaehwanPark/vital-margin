@@ -4,9 +4,9 @@ Keep this file short and repo-wide. Detailed workflow rules live in
 `.agents/skills/` and `docs/harness/`.
 
 ## What
-- This repository is a Rust health-policy strategy game with a reference CLI,
-  bounded MCP adapter, and active loopback browser GUI. The player leads a
-  fictional nonprofit US health system.
+- This repository is Vital Margin, a Rust health-policy strategy game with a
+  reference CLI, bounded MCP adapter, and active loopback browser GUI. The
+  player leads a fictional nonprofit US health system.
 - Canonical project docs are `README.md`, `docs/proposal.md`,
   `docs/roadmap.md`, and `docs/design_principles.md`.
 - The durable design boundaries are deterministic core transitions, explicit
@@ -21,12 +21,13 @@ Keep this file short and repo-wide. Detailed workflow rules live in
 
 ## How
 - Before major changes, read the canonical docs and the harness team spec at
-  `docs/harness/health-policy-strategy-game/team-spec.md`.
+  `docs/harness/vital-margin/team-spec.md`.
 - Use repo-local skills only for project-specific health-policy simulation and
   actor-visible presentation workflows. Use global skills for generic
   functional programming, Rust quality, UX, code review, comments, spec
   maintenance, planning, and release preparation.
-- Current Rust commands: `cargo fmt`, `cargo test`, and `cargo run`.
+- Current Rust commands: `cargo fmt`, `cargo test`, and `cargo run` (or
+  `cargo run --bin vital-margin-gui`).
 - Current GUI development targets the host-backed Setup/Brief/Decide/Resolve/
   Review workspace and all three launchable campaigns. Chromium evergreen is
   the default browser target; Codex browser inspection is development evidence.

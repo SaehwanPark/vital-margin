@@ -1,6 +1,6 @@
 ---
 name: hs-presentation-domain-qa
-description: Review Health Policy Strategy Game visual, audio, GUI, and asset work for information-boundary, causality, accessibility, provenance, and replay risks.
+description: Review Vital Margin visual, audio, GUI, and asset work for information-boundary, causality, accessibility, provenance, and replay risks.
 ---
 
 # HS Presentation Domain QA
@@ -78,5 +78,5 @@ Write `_workspace/03_presentation_qa.md` with these sections:
 - `docs/visual_audio_enhancement_roadmap.md`
 - `docs/design_principles.md`
 - `ARCHITECTURE.md`
-- `docs/harness/health-policy-strategy-game/team-spec.md`
+- `docs/harness/vital-margin/team-spec.md`
 - `LESSONS.md`

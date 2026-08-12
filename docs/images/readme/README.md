@@ -9,7 +9,7 @@ after compiling package version `0.14.13` on branch
 
 - Source revision: base commit `30cbb68e776054ce4ccc645f5b53ea2dad63ce51` plus
   the documentation/version working tree on this branch.
-- GUI method: live Rust loopback host (`cargo run --bin hs-mgt-game-gui`) in
+- GUI method: live Rust loopback host (`cargo run --bin vital-margin-gui`) in
   Chromium evergreen, 1440×900 viewport, 100% zoom, seed `42`.
 - CLI method: live `cargo run` in a macOS Terminal pseudo-terminal through
   `script -q /dev/null`, Normal difficulty and seed `42` for competitive play.

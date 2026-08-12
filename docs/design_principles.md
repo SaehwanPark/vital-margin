@@ -1,4 +1,4 @@
-# Health Policy Strategy Game
+# Vital Margin
 ## Design Principles
 
 **Status:** Canonical design guidance  

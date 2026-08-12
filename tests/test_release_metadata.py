@@ -17,7 +17,7 @@ class ReleaseMetadataTests(unittest.TestCase):
   def test_repository_metadata_is_consistent(self):
     versions = CHECK.read_versions(ROOT)
     self.assertEqual(CHECK.validate_versions(versions), [])
-    self.assertEqual(versions["Cargo.toml"], "0.14.13")
+    self.assertEqual(versions["Cargo.toml"], "0.14.14")
 
   def test_checker_accepts_modified_semver_shape(self):
     self.assertEqual(

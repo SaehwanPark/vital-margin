@@ -1,9 +1,9 @@
 ---
-name: hs-mgt-game-orchestrator
-description: Route Health Policy Strategy Game work through repo-specific research, simulation design, presentation contracts, implementation, and domain-QA handoffs without duplicating global skills.
+name: vital-margin-orchestrator
+description: Route Vital Margin work through repo-specific research, simulation design, presentation contracts, implementation, and domain-QA handoffs without duplicating global skills.
 ---
 
-# HS Management Game Orchestrator
+# Vital Margin Orchestrator
 
 ## When to Use
 
@@ -23,7 +23,7 @@ description: Route Health Policy Strategy Game work through repo-specific resear
 - Current repository state.
 - Canonical docs: `README.md`, `docs/proposal.md`, `docs/roadmap.md`, and
   `docs/design_principles.md`.
-- Team spec: `docs/harness/health-policy-strategy-game/team-spec.md`.
+- Team spec: `docs/harness/vital-margin/team-spec.md`.
 - `docs/visual_audio_enhancement_roadmap.md` when presentation is in scope.
 
 ## Workflow
@@ -79,7 +79,7 @@ description: Route Health Policy Strategy Game work through repo-specific resear
 
 ## References
 
-- `docs/harness/health-policy-strategy-game/team-spec.md`
+- `docs/harness/vital-margin/team-spec.md`
 - `README.md`
 - `docs/proposal.md`
 - `docs/roadmap.md`

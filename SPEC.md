@@ -1,7 +1,7 @@
 # Project Specification
 
-This is the concise spec-driven-development index for the Health Policy
-Strategy Game. It records what is true, what is being changed, and what is
+This is the concise spec-driven-development index for Vital Margin.
+It records what is true, what is being changed, and what is
 intentionally deferred. Detailed release history remains in `CHANGELOG.md`,
 dated findings remain under `docs/history/` and `_workspace/`, and architectural
 decisions remain in `docs/decision-records/`.

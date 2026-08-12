@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hs-mgt-game.invalid/schemas/visual-asset.schema.json",
-  "title": "Health Policy Strategy Game visual asset entry",
+  "$id": "https://vital-margin.invalid/schemas/visual-asset.schema.json",
+  "title": "Vital Margin visual asset entry",
   "type": "object",
   "required": ["id", "asset_type", "semantic_role", "source_path", "release_path", "creator", "creation_method", "license", "modifications", "original_hash", "release_hash", "attribution_text", "accessible_equivalent", "visible_source", "approval_status", "provenance"],
   "properties": {

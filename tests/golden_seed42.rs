@@ -1,5 +1,5 @@
-use hs_mgt_game::cli::build_history_for_strategy;
-use hs_mgt_game::model::*;
+use vital_margin::cli::build_history_for_strategy;
+use vital_margin::model::*;
 
 #[test]
 fn default_seed_reproduces_canonical_demo_trajectory() {

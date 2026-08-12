@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.14.14] - 2026-08-12
+
+- Rename the project and repository to "Vital Margin" (`vital-margin`), establishing
+  consistent presentation and internal symbol naming across the Rust crate,
+  CLI/MCP/GUI binaries, browser presentation, agent skills, harness specs,
+  documentation, and GitHub remote.
+- Rename binaries to `vital-margin`, `vital-margin-gui`, and `vital-margin-mcp`.
+- Update crate imports from `hs_mgt_game` to `vital_margin`.
+
 ## [0.14.13] - 2026-08-04
 
 - Rebuild the public README around the player journey, with a GUI stabilization

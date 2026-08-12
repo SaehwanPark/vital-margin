@@ -27,7 +27,7 @@ browser renders actor-visible projections and text/accessibility fallbacks.
 From the repository root, run:
 
 ```bash
-cargo run --bin hs-mgt-game-gui
+cargo run --bin vital-margin-gui
 ```
 
 Keep the process running and open the printed loopback URL. The live GUI

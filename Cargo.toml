@@ -1,8 +1,8 @@
 [package]
-name = "hs-mgt-game"
-version = "0.14.13"
+name = "vital-margin"
+version = "0.14.14"
 edition = "2024"
-default-run = "hs-mgt-game"
+default-run = "vital-margin"
 
 [dependencies]
 axum = "0.8.9"

@@ -26,7 +26,7 @@ and checkpoints do not transfer between them:
 1. From the repository root, start the live GUI host:
 
    ```bash
-   cargo run --bin hs-mgt-game-gui
+   cargo run --bin vital-margin-gui
    ```
 
 2. Keep that terminal running and open the printed URL, normally

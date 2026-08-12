@@ -25,7 +25,7 @@ def _package_version(cargo_toml):
 
 def _lockfile_version(cargo_lock):
   for block in cargo_lock.split("[[package]]")[1:]:
-    if re.search(r'^name\s*=\s*"hs-mgt-game"\s*$', block, re.MULTILINE):
+    if re.search(r'^name\s*=\s*"vital-margin"\s*$', block, re.MULTILINE):
       match = re.search(r'^version\s*=\s*"([^"]+)"\s*$', block, re.MULTILINE)
       return match.group(1) if match else None
   return None
