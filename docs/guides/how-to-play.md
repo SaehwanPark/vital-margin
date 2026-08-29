@@ -58,10 +58,12 @@ goals:
 The tutorial is a 5-turn structured scenario that introduces the core tradeoffs
 of health system leadership:
 
-```
-[ Turn 1: Initial Allocation ] -> [ Turn 2: Workforce Pressure ] -> [ Turn 3: Payer Friction ]
-                                                                             |
-[ Turn 5: Final Review & Debrief ] <---------------- [ Turn 4: Community Scrutiny ]
+```mermaid
+graph LR
+  T1[Turn 1: Initial Allocation] --> T2[Turn 2: Workforce Pressure]
+  T2 --> T3[Turn 3: Payer Friction]
+  T3 --> T4[Turn 4: Community Scrutiny]
+  T4 --> T5[Turn 5: Review & Debrief]
 ```
 
 ### Turn Structure

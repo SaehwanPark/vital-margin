@@ -11,16 +11,9 @@ hosted locally by a high-performance Rust web server. It runs entirely inside
 your local browser without requiring external cloud accounts, remote servers,
 or database configurations.
 
-```
-+----------------------------------------------------------------------------------------------------+
-|                                    VITAL MARGIN EXECUTIVE DESK                                     |
-+----------------------------------------------------------------------------------------------------+
-| [ BRIEF ]                 | [ DECIDE ]                | [ RESOLVE ]               | [ REVIEW ]     |
-| Executive KPIs            | Action Catalog            | Simultaneous Resolution   | History Log    |
-| Regional Board & Map      | Plan Drafting Rail        | Attributed Effects        | Debrief Ledger |
-| Market & Rival Signals    | Host Validation Check     | Animation Controls        | Replay Player  |
-+----------------------------------------------------------------------------------------------------+
-```
+| Brief Workspace | Decide Workspace | Resolve Workspace | Review Workspace |
+| :--- | :--- | :--- | :--- |
+| • Executive KPIs<br>• Regional Board Map<br>• Facility Drawer<br>• Rival Signals | • Action Catalog<br>• Plan Drafting Rail<br>• Validation Checker<br>• Month Submission | • Simultaneous Resolution<br>• Attributed Effects<br>• Animation Controls<br>• Next Month Handoff | • Committed History<br>• Debrief Ledger<br>• Replay Scrubber<br>• Decision Context |
 
 The recommended first session is the 5-turn **Stabilization Tutorial**
 (`stabilization-v1`). The **Competitive Regional Market**
@@ -116,12 +109,12 @@ The GUI organizes your leadership workflow into four dedicated workspaces:
 
 Vital Margin provides robust session persistence:
 
-```
-[ Active Session ] --(Autosave on Commit)--> [ Host Checkpoint Archive ]
-                                                     |
-                                            [ Find Checkpoints ]
-                                            [ Export Reference ]
-                                            [ Download Save    ]
+```mermaid
+graph TD
+  A[Active Live Session] -->|Autosave on Commit| B[Host Checkpoint Archive]
+  B --> C[Find Saved Checkpoints]
+  B --> D[Export Reference JSON]
+  B --> E[Download Host Save File]
 ```
 
 - **Automatic Autosave:** The host automatically writes a checkpoint after
