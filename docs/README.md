@@ -107,8 +107,12 @@ guide](guides/mcp-playtesting-guide.md), and repository-local [agent harness](ha
 
 ## Player guides
 
-- [CLI guide](guides/how-to-play.md)
-- [GUI guide](guides/gui-how-to-play.md)
+- [Player Documentation Portal (GitHub Pages)](index.md)
+- [Installation and first launch](guides/installation.md)
+- [How to Play in GUI Mode](guides/gui-how-to-play.md)
+- [How to Play in the CLI](guides/how-to-play.md)
+- [Strategy & Mechanics Guide](guides/strategy-and-mechanics.md)
+- [Terminology Glossary](reference/glossary.md)
 
 ## Historical context
 

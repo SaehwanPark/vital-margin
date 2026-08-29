@@ -1,97 +1,85 @@
-# Installation and first launch
+# Installation and First Launch
+
+[Documentation Home](../index.md) | [GUI Guide](gui-how-to-play.md) | [CLI Guide](how-to-play.md) | [Strategy Guide](strategy-and-mechanics.md) | [Glossary](../reference/glossary.md)
+
+---
 
 This guide is for a first-time player who has never used a developer tool.
 You do not need an account, a database, or a separate web server. The project
 is currently distributed as source code, so the first compilation downloads
-Rust dependencies and can take a few minutes.
+Rust dependencies and can take a couple of minutes.
 
-The project documents a source setup for macOS, Windows, and Linux. Chromium
-evergreen desktop is the verified browser target; other browsers are deferred
-and non-certified. This guide does not claim operating-system certification.
+The project documents a source setup for **macOS**, **Windows**, and **Linux**.
+**Chromium evergreen desktop** (Chrome, Edge, Brave, Chromium) is the verified
+browser target; other browsers are deferred and non-certified.
 
-## 1. Install the prerequisites
+---
+
+## 1. Install the Prerequisites
 
 ### Rust and Cargo
-
-Rust is the programming language used by the game. Cargo is the small command
+Rust is the programming language used by the game. Cargo is the command-line tool
 that compiles and launches it. Follow the official
-[Rust installation guide](https://www.rust-lang.org/learn/get-started).
+[Rust installation guide](https://www.rust-lang.org/learn/get-started):
 
-- **macOS or Linux:** the guide installs `rustup` from a Terminal window.
-- **Windows:** use the `rustup-init.exe` installer described by the guide. The
-  commands below use **PowerShell**, Windows' command-line window.
+- **macOS or Linux:** Open a Terminal window and install via `rustup`:
+  ```bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+- **Windows:** Download and run the `rustup-init.exe` installer from
+  [rustup.rs](https://rustup.rs). The commands below use **PowerShell**, Windows'
+  default command-line window.
 
-After installation, close the old Terminal or PowerShell window and open a new
-one. This reloads the system's command search path. Verify both commands:
+After installation, **close your Terminal or PowerShell window and open a brand-new
+one**. This ensures your system's PATH environment variables are refreshed.
 
-```text
+Verify both commands in the new window:
+```bash
 rustc --version
 cargo --version
 ```
-
-Each command should print a version. If either says “command not found” or “is
-not recognized,” see the [FAQ](#faq) before continuing.
+Each command should print a version number (e.g., `cargo 1.80.0 ...`). If you see
+"command not found" or "is not recognized", see the [FAQ](#faq) below.
 
 ### Optional Git
-
-Git is useful when you want repeatable updates. It is not required for a ZIP
-download. Install it from the official [Git downloads](https://git-scm.com/downloads)
-page and verify it in a new terminal:
-
-```text
+Git is useful for fast, repeatable updates with `git pull`. It is not required
+if you download the game as a ZIP archive. Install it from
+[git-scm.com/downloads](https://git-scm.com/downloads) and verify:
+```bash
 git --version
 ```
 
-## 2. Get the game source
+---
 
-### Lowest-friction path: GitHub ZIP
+## 2. Get the Game Source
 
-1. Open the repository page in a browser.
-2. Select **Code → Download ZIP**.
-3. Extract the ZIP to a folder you can find again, such as `Documents`.
-4. The extracted folder is the repository folder. It must contain
-   `Cargo.toml` near its top level.
+### Lowest-Friction Path: GitHub ZIP Download
+1. Open the repository on GitHub.
+2. Click the green **Code** button and select **Download ZIP**.
+3. Extract the ZIP archive to a convenient folder (such as your `Documents` or `Desktop` folder).
+4. Ensure the extracted folder contains `Cargo.toml` at its top level.
 
-This path is ideal for a one-time play session. To update later, download a
-new ZIP and use the newer folder; do not copy files over a live checkpoint
-without first reading [Saved checkpoints](#saved-checkpoints).
-
-### Repeatable-update path: Git clone
-
-If Git is installed, follow the official
-[GitHub cloning guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
-The short form is:
-
+### Repeatable-Update Path: Git Clone
+If Git is installed:
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/SaehwanPark/vital-margin.git
+cd vital-margin
 ```
+To update in the future, simply run `git pull` from inside the repository folder.
 
-Replace the angle-bracket placeholders with the repository URL and folder name
-shown by GitHub. Later, update that checkout with:
+---
 
+## 3. Open the Repository Folder
+
+Open your terminal and navigate to the directory containing `Cargo.toml`:
+
+- **macOS / Linux:** Open Terminal, type `cd ` (with space), drag the folder
+  into Terminal, and press Enter.
+- **Windows PowerShell:** Open PowerShell, type `Set-Location ` (with space),
+  drag the folder into PowerShell, and press Enter.
+
+Verify you are in the correct directory:
 ```bash
-git pull
-```
-
-Do not run `git pull` while a game command is compiling or while you are
-editing files in the checkout.
-
-## 3. Open the repository folder
-
-The repository folder is the directory containing `Cargo.toml`. A terminal is
-a text window where you type commands; PowerShell is the Windows version of
-that window.
-
-- **macOS/Linux:** open Terminal, type `cd ` (including the space), drag the
-  repository folder into the window, press Enter, then type `pwd`.
-- **Windows PowerShell:** open PowerShell, type `Set-Location ` (including the
-  space), drag the repository folder into the window, and press Enter. You can
-  confirm the folder with `Get-Location`.
-
-Check that the folder is correct:
-
-```text
 # macOS/Linux
 ls Cargo.toml
 
@@ -99,143 +87,88 @@ ls Cargo.toml
 Get-Item Cargo.toml
 ```
 
-If the command cannot find the file, you are one folder too high or too low;
-see [“could not find `Cargo.toml`”](#could-not-find-cargotoml).
+---
 
-## 4. Compile and play
+## 4. Compile and Play
 
-The first run compiles the game and downloads dependencies. From the folder
-containing `Cargo.toml`, start the recommended GUI tutorial:
+### Recommended: Live Browser GUI
+From the repository root folder, launch the live GUI:
 
 ```bash
 cargo run --bin vital-margin-gui
 ```
 
-Leave that terminal open. When it prints a URL, open the URL in a Chromium
-evergreen desktop browser, normally `http://127.0.0.1:7878`. Choose
-**Stabilization tutorial**, seed `42`, and follow the five-stage
-Brief → Decide → Resolve → Review flow.
+Leave that terminal open. When compilation finishes, it prints:
+```text
+Vital Margin GUI: http://127.0.0.1:7878
+```
+Open `http://127.0.0.1:7878` in your Chromium browser, select **Stabilization
+tutorial** (`stabilization-v1`), seed `42`, and click **Start selected session**!
 
-The CLI is an alternative, not a required setup step:
+### Alternative: Interactive Terminal CLI
+If you prefer playing directly in the terminal:
 
 ```bash
 cargo run
 ```
+Press Enter (or `1`) for `stabilization-v1`, press `b` for beginner guided
+mode, and accept seed `42`.
 
-Choose `1` for `stabilization-v1`, then beginner guided choices (`b`) and seed
-`42`. The [CLI guide](how-to-play.md) explains competitive commands. The
-[GUI guide](gui-how-to-play.md) covers settings, checkpoints, alternate ports,
-and recovery.
+---
 
-## Updating and stopping
+## 🛑 Stopping and Updating
 
-Stop the GUI by returning to its terminal and pressing **Ctrl-C** (Control-C on
-macOS). Stop the CLI by using its `q`, `quit`, or `exit` command, or Ctrl-C.
+- **To Stop the Game:** Return to the terminal running Cargo and press **Ctrl-C**
+  (Control-C on macOS). In the CLI, type `q`, `quit`, or `exit`.
+- **To Update:**
+  - *Git users:* Stop the host, run `git pull`, and restart with `cargo run`.
+  - *ZIP users:* Download the latest ZIP, extract to a new folder, and run from
+    there.
 
-- ZIP users: download and extract a fresh ZIP, then launch from the new folder.
-- Git users: stop the game, run `git pull`, and launch again.
+### Saved Checkpoints
+Checkpoints are saved by the host to your local checkout. Use the GUI's **Save host
+checkpoint** and **Find saved checkpoints** controls before switching folders.
+Session states are managed by the host, not stored in the browser.
 
-Updating source does not install a separate application. If a new compile
-fails, read the error before deleting the older checkout.
+---
 
-### Saved checkpoints
-
-Checkpoints belong to the running host and its source checkout. Before
-replacing or removing a folder, use the GUI's **Save host checkpoint** and
-**Find saved checkpoints** controls, or finish the session. A browser stores
-only an opaque session ID; it does not contain the game state. A checkpoint is
-not portable between unrelated hosts or folders unless the host can discover
-the matching archive.
-
-### Optional removal
-
-After stopping the host, you may move the extracted/cloned repository folder
-to the Trash or Recycle Bin. This removes the source and any host checkpoints
-stored alongside it; keep a copy if you may want to resume. Rust and Git remain
-installed until you remove them using their own official uninstall guidance.
-
-## FAQ
+## ❓ Frequently Asked Questions (FAQ)
 
 ### `cargo` or `git` is missing
-
-Install Rust/Cargo from the [official Rust guide](https://www.rust-lang.org/learn/get-started)
-and Git from [git-scm.com/downloads](https://git-scm.com/downloads) if you
-need Git. Then close and reopen the terminal or PowerShell. Installation
-changes do not reach an already-open command window.
-
-### I reopened the terminal, but the command is still missing
-
-Run `rustc --version` and `cargo --version` again in a brand-new window. On
-Windows, restart PowerShell after `rustup-init.exe`; on macOS/Linux, rerun the
-`rustup` command from the Rust guide if the installer reported a PATH change.
-If a version prints, return to the repository folder with `cd` or
-`Set-Location`.
+Install Rust from [rustup.rs](https://rustup.rs) and Git from
+[git-scm.com/downloads](https://git-scm.com/downloads). Close and reopen your
+terminal window so that the PATH changes take effect.
 
 ### “could not find `Cargo.toml`”
+You are not in the repository directory. Use `cd` or `Set-Location` to navigate
+to the folder where `Cargo.toml` is located.
 
-Cargo only works from this repository folder. List the folder (`ls` on
-macOS/Linux, `Get-ChildItem` in PowerShell), locate `Cargo.toml`, and change
-into that directory before running Cargo.
+### The first compilation is taking a few minutes
+This is completely normal. Cargo downloads and compiles all necessary Rust
+libraries during the initial build. Subsequent runs will use cached build
+artifacts and start in seconds.
 
-### The first compilation is slow
+### The browser displays "Connection Refused"
+The Rust GUI host is either still compiling or has stopped. Check your
+terminal to ensure `cargo run --bin vital-margin-gui` is actively running.
 
-That is expected: Cargo compiles the game and downloads dependencies once.
-Keep the terminal open and wait for the URL or the final CLI prompt. Later
-runs reuse the build cache and are normally faster.
-
-### Dependency downloads fail
-
-Check your internet connection, retry the same command, and avoid closing the
-terminal while Cargo is fetching crates. A corporate proxy, VPN, or firewall
-may block the Rust package registry; try an allowed network or ask its
-administrator. No game files are changed by a failed download.
-
-### The browser says “connection refused”
-
-The Rust GUI host is not running, is still compiling, or you opened the wrong
-address. Restart `cargo run --bin vital-margin-gui`, wait for its printed URL,
-keep that terminal open, and open the exact URL.
-
-### The port is occupied (“address already in use”)
-
-Stop the older GUI process, or choose another loopback port:
-
+### "Address already in use (port 7878)"
+Stop any existing instance of the GUI, or bind to an alternate port:
 ```bash
 cargo run --bin vital-margin-gui -- --bind 127.0.0.1:8787
 ```
+Then open `http://127.0.0.1:8787`.
 
-Open the URL printed by that process.
+### I opened `gui/index.html` and see mock data
+Opening the HTML file directly runs the static fallback demo without the Rust
+simulation engine. Always launch via `cargo run --bin vital-margin-gui` and visit
+the printed `http://127.0.0.1:7878` URL.
 
-### I opened `gui/index.html` and see demo data
+---
 
-That file is a static demonstration page. It does not connect to the Rust
-host. Close it and launch `cargo run --bin vital-margin-gui`; live play starts
-only at the printed loopback URL.
+## 📖 Next Steps
 
-### My browser is unsupported
-
-Use a current Chromium-based desktop browser. Firefox, WebKit/Safari, mobile,
-and legacy-browser support are deferred and non-certified; the game remains
-source-only and does not provide a hosted fallback.
-
-### Audio is silent
-
-Audio is optional. Click **Enable audio** in the page (browsers require a
-user gesture), check the tab and system mute controls, and raise the Master
-volume. Written cues, decisions, results, history, and debriefs remain
-available when audio is muted or unavailable.
-
-### I cannot recover a checkpoint
-
-The host must still be running or must have the archive that contains the
-checkpoint. Choose **Find saved checkpoints**, select the matching opaque
-session ID, and use **Load existing session** or **Restore host checkpoint**.
-If the ID is unknown, stale, or from another checkout, start a new session;
-the browser cannot reconstruct the missing state. See the detailed
-[checkpoint section in the GUI guide](gui-how-to-play.md#load-an-existing-session).
-
-### I need more help
-
-Read [How to Play in GUI Mode](gui-how-to-play.md) for browser settings,
-refresh behavior, alternate ports, and the full recovery boundary. For the
-campaign rules and CLI syntax, use [How to Play](how-to-play.md).
+- [How to Play in GUI Mode](gui-how-to-play.md)
+- [How to Play in the CLI](how-to-play.md)
+- [Comprehensive Strategy & Mechanics Guide](strategy-and-mechanics.md)
+- [Glossary of Key Terms](../reference/glossary.md)
