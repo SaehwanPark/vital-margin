@@ -1,60 +1,81 @@
 # Glossary
 
-**Status:** Maintained terminology reference; reviewed for v0.14.3
-**Audience:** Contributors, domain reviewers, and playtest designers
+[Documentation Home](../index.md) | [Installation Guide](../guides/installation.md) | [GUI Guide](../guides/gui-how-to-play.md) | [CLI Guide](../guides/how-to-play.md) | [Strategy Guide](../guides/strategy-and-mechanics.md)
 
-Core terms for the Health Policy Strategy Game, aligned with
-[`system-boundary.md`](../design/system-boundary.md) and [`design_principles.md`](../design_principles.md).
+**Status:** Maintained terminology reference  
+**Audience:** Players, contributors, domain reviewers, and playtest designers  
 
-## Simulation Core
+This glossary defines core terminology for **Vital Margin**, aligned with
+[`system-boundary.md`](../design/system-boundary.md) and
+[`design_principles.md`](../design_principles.md).
 
-| Term | Definition |
-| --- | --- |
-| True state | The full modeled world state used by the transition core. |
-| Observation | Actor-specific reported measures derived from true state and resolved inputs. |
-| Resolved inputs | Seeded stochastic values computed before `transition()` runs. |
-| Transition | One deterministic step: prior state + command + resolved inputs + ruleset → next state. |
-| History | Genesis state plus append-only committed transitions. |
-| State hash | Stable 64-bit FNV-1a fingerprint over canonical state for replay checks. |
-| Replay | Re-execution of committed transitions from genesis to verify hashes and final state. |
-| Replay artifact | Versioned text export of seed, play mode, ruleset, and committed history. |
+---
 
-## Actors and Commands
+## ⚙️ Simulation Core
 
 | Term | Definition |
 | --- | --- |
-| Player command | CEO action validated against the ruleset before transition. |
-| Action points (AP) | Monthly management-attention budget limiting competitive campaign commands. |
-| Political capital | Advocacy and negotiation resource consumed by some competitive verbs. |
-| Simultaneous resolution | Aggregating all player monthly batches before transition (ADR-0003). |
-| AI player | Computer-controlled health-system peer using the same command catalog as the human. |
-| AI-agent playtester | External AI or sub-agent client that plays a campaign through MCP to generate validation evidence; distinct from an in-game AI player. |
-| Human player | Person playing the CEO role through the CLI; not required for the active Phase 7 playtest path. |
-| NPC actor | Institution (insurer, state, labor, coalition) that responds to market state; not a peer player. |
-| Actor decision | Non-player strategic outcome with inspectable rationale text. |
-| Attributed effect | Labeled delta linking a source, metric, and value change. |
-| Actor card | Design artifact defining authority, objectives, and decision procedure before runtime implementation. |
+| **True state** | The full modeled world state stored within the deterministic transition engine. |
+| **Observation** | Actor-specific reported measures and metrics visible to a specific player at decision time. Excludes hidden rival choices and unresolved future stochastic inputs. |
+| **Resolved inputs** | Seeded stochastic values computed before a transition executes. |
+| **Transition** | One deterministic step: `prior state + player commands + resolved inputs + ruleset → next state`. |
+| **History** | Genesis state plus an append-only sequence of committed transitions. |
+| **State hash** | Stable 64-bit FNV-1a fingerprint calculated over canonical state for replay and verification checks. |
+| **Replay** | Complete re-execution of committed transitions from genesis to mathematically verify state hashes and run reproducibility. |
+| **Replay artifact** | Versioned text export containing seed, campaign ruleset, and committed history. |
 
-## Educational
+---
 
-| Term | Definition |
-| --- | --- |
-| Debrief | End-of-run causal explanation from committed history, not omniscient state. |
-| Decision quality | Whether a choice was reasonable given observations at decision time. |
-| Outcome quality | Realized state after actor responses and stochastic inputs. |
-| Agent-playtest evidence | Simulated-player observations, commands, histories, and debriefs used to inspect gameplay and explanation quality; not measured human learning evidence. |
-
-## Scope
+## 🏛️ Executive Resources & Economics
 
 | Term | Definition |
 | --- | --- |
-| Vertical slice | Bounded end-to-end demo proving architecture and gameplay thesis. |
-| Ruleset | Versioned validation bounds and transition parameters for a demo or scenario. |
-| Scenario | Packaged initial conditions, actor set, and learning objectives using the validated `scenario-toml-0.1.40` format; broader authoring remains a draft. |
-| Campaign | Playable run configuration (`stabilization-v1`, `competitive-regional-v1`, or `regional-affiliation-v1`). |
-| Abstraction | Prototype mechanism labeled as design simplification, not calibrated fact. |
+| **Action Points (AP)** | The monthly management-attention budget that limits how many strategic commands an executive can submit in a single month (e.g., 3 AP/month on Normal). |
+| **Cash Runway** | Estimated months of liquidity remaining before reserves are exhausted (`comfortable`, `watch`, `strained`, `critical`). |
+| **Political Capital (PC)** | Influence and advocacy resource consumed when conducting rate negotiations or making binding public pledges. |
+| **Operating Margin** | Net operating revenue minus operating expenses divided by revenue; reflects day-to-day healthcare delivery profitability. |
+| **Workforce Trust** | Staff morale and retention index (0% to 100%). High trust boosts clinical retention; low trust accelerates nurse vacancy and turnover. |
+| **Capital Project** | Multi-month infrastructure or IT initiative (e.g., `asc_unit`, `cardiac_tower`, `ehr_epic`) with monthly cash draws (max 2 active projects). |
 
-## Related Documents
+---
+
+## 🎮 Actors & Commands
+
+| Term | Definition |
+| --- | --- |
+| **Player command** | Validated executive action submitted to the simulation host (e.g., `invest`, `recruit`, `monitor`, `negotiate`, `commit`, `project`, `hold`). |
+| **Simultaneous resolution** | Execution mode where human player commands and all autonomous AI rival plans are resolved concurrently in the same monthly step. |
+| **AI player** | In-game autonomous health system peer (e.g., Summit Health, Northlake Regional) competing for regional market share under the exact same command catalog. |
+| **AI-agent playtester** | External testing client running via Model Context Protocol (MCP) or loopback GUI to generate automated validation evidence; distinct from an in-game AI rival. |
+| **NPC actor** | External institutions (commercial payers, Medicaid/Medicare regulators, labor unions, community coalitions) that react to market conditions. |
+| **Attributed effect** | Explicitly labeled delta linking an action or external event to a specific metric change in the post-turn resolution ledger. |
+| **Actor card** | Specification defining an institutional actor's authority, incentives, and decision procedure. |
+
+---
+
+## 🎓 Educational & Debriefing Concepts
+
+| Term | Definition |
+| --- | --- |
+| **Debrief** | End-of-run causal explanation generated from committed history and visible observations. |
+| **Decision quality** | Retrospective evaluation of whether an executive choice was sound, timely, and defensible *given only the information visible at decision time*. |
+| **Outcome quality** | The realized end-state metrics after accounting for unpredictable rival actions and stochastic shocks. |
+| **Pledge Follow-Through Gap** | Discrepancy that occurs when a player makes high public access or workforce pledges without backing them up with operational capacity and capital investments. |
+
+---
+
+## 📦 Campaigns & Scenarios
+
+| Term | Definition |
+| --- | --- |
+| **Campaign** | Standalone playable game mode: `stabilization-v1` (5-turn tutorial), `competitive-regional-v1` (24-month competition), or `regional-affiliation-v1` (6-stage partnership scenario). |
+| **Scenario** | Packaged initial world state, actor configuration, and learning objectives. |
+| **Vertical slice** | Bounded end-to-end playable slice proving game design, simulation determinism, and user experience. |
+| **Abstraction** | Intentional design simplification used to illustrate a health-policy mechanism without claiming empirical predictive calibration. |
+
+---
+
+## 🔗 Related Documents
 
 - [`system-boundary.md`](../design/system-boundary.md)
 - [`actor-cards.md`](../design/actor-cards.md)

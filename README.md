@@ -111,9 +111,13 @@ the [contributor documentation index](docs/README.md), not in the player path.
 
 ### Players
 
+- [Player Documentation Portal (GitHub Pages)](https://saehwanpark.github.io/vital-margin/)
+- [Documentation Index](docs/index.md)
 - [Installation and first launch](docs/guides/installation.md)
-- [How to Play in the CLI](docs/guides/how-to-play.md)
 - [How to Play in GUI Mode](docs/guides/gui-how-to-play.md)
+- [How to Play in the CLI](docs/guides/how-to-play.md)
+- [Strategy & Mechanics Guide](docs/guides/strategy-and-mechanics.md)
+- [Terminology Glossary](docs/reference/glossary.md)
 
 ### Project and contributors
 

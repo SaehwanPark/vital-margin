@@ -1,248 +1,230 @@
-# How To Play
+# How to Play Vital Margin (CLI & Core Mechanics)
 
-This guide covers both the recommended live GUI tutorial and the CLI
-alternative. Install from [Installation and first launch](installation.md),
-then use the [GUI guide](gui-how-to-play.md) for settings, checkpoints,
-alternate ports, and recovery.
+[Documentation Home](../index.md) | [Installation Guide](installation.md) | [GUI Guide](gui-how-to-play.md) | [Strategy & Mechanics](strategy-and-mechanics.md) | [Glossary](../reference/glossary.md)
 
-## What this game is
+---
 
-You lead a fictional nonprofit US health system. Decisions balance finance,
-workforce, policy, community trust, and rivals. The host reports only
-actor-visible information; seeded uncertainty and the same choices produce the
-same run.
+## 🏥 Welcome to Executive Leadership
 
-The three campaigns are alternatives rather than sequential chapters. Progress
-and checkpoints do not transfer between them:
+In **Vital Margin**, you are the Chief Executive Officer (CEO) of a fictional
+nonprofit health system in the United States. Your goal is to guide your
+institution through complex operational, clinical, regulatory, and competitive
+challenges while keeping your organization financially solvent and true to its
+charitable community mission.
 
-| Campaign | What you do | Interface and audience |
-| --- | --- | --- |
-| **Stabilization tutorial** (`stabilization-v1`) | Five abstract executive decisions; no calendar duration or difficulty. | Recommended first GUI run; CLI also has beginner guided choices (`b`). |
-| **Competitive regional market** (`competitive-regional-v1`) | A separate 24-month campaign with simultaneous AI-rival actions, monthly AP planning, and lagged public information. | Difficulty tiers apply; this is local AI pressure, not network multiplayer. |
-| **Regional affiliation** (`regional-affiliation-v1`) | A separate six-stage nonprofit-partner scenario covering assessment, posture, commitments, review, and early integration or independence. | No AI rivals or difficulty; it is not legal, valuation, antitrust, or transaction advice. |
+The game is **deterministic**: for the same random seed and choices, the engine
+produces the exact same outcome. Crucially, the game separates **true engine
+state** from **actor-visible observations**—you make choices based on executive
+reports and public intelligence, while rivals act simultaneously behind the fog
+of market uncertainty.
 
-## Recommended GUI first run: stabilization tutorial
+---
 
-1. From the repository root, start the live GUI host:
+## 🚀 Quick Launch: Playing in the Terminal
 
-   ```bash
-   cargo run --bin vital-margin-gui
-   ```
-
-2. Keep that terminal running and open the printed URL, normally
-   `http://127.0.0.1:7878`.
-3. Select **Stabilization tutorial** (`stabilization-v1`) and seed `42`.
-   Difficulty is not used by this campaign.
-4. Choose **Start selected session**. Read the visible brief, choose one
-   host-provided action, review the committed stage, and continue until the
-   terminal Review debrief after five decisions.
-
-Do not open `gui/index.html` directly when you want to play: direct/static mode
-contains demonstration data and no live game host.
-
-## CLI alternative
-
-1. Run the reference CLI:
-
+1. **Launch the Reference CLI**:
    ```bash
    cargo run
    ```
+2. **Select Campaign**:
+   - Press **`1`** (or Enter) for **Stabilization Tutorial** (`stabilization-v1`).
+   - Press **`2`** (or `c`) for **Competitive Regional Market** (`competitive-regional-v1`).
+   - Press **`3`** (or `a`) for **Regional Affiliation** (`regional-affiliation-v1`).
+3. **Accept Seed `42`** and select Beginner Guided mode (**`b`**) for a friendly
+   first walkthrough.
 
-2. Choose Enter or `1` for `stabilization-v1`, then `b` for beginner guided
-   choices and seed `42` (press Enter at each default prompt).
-3. To explore other campaigns, choose `2`/`c` for competitive or `3`/`a` for
-   regional affiliation. Competitive difficulty is Easy (1 rival, 4 AP/month),
-   Normal (2, 3 AP), Hard (3, 3 AP), or Expert (4, 2 AP).
-4. Use `?`/`help` for context and `q`, `quit`, or `exit` to leave.
+> [!TIP]
+> If you prefer a visual interface with maps, cards, and interactive sliders,
+> run `cargo run --bin vital-margin-gui` and open `http://127.0.0.1:7878`. See
+> the [GUI Guide](gui-how-to-play.md) for details.
 
-## Game structure from your perspective
+---
 
-## Stabilization (`stabilization-v1`)
+## 🎮 Campaign Overview & Structure
 
-For each of 5 turns, you:
+Vital Margin offers three standalone campaigns designed for different learning
+goals:
 
-1. Read your observation and briefing.
-2. (Interactive mode) review uncertainty preview.
-3. Enter turn-specific numeric command fields.
-4. Submit and watch NPC response plus turn summary.
-5. Continue to next turn.
+| Campaign | Structure | Key Mechanics | Recommended Audience |
+| --- | --- | --- | --- |
+| **Stabilization Tutorial** (`stabilization-v1`) | 5 abstract executive turns; no calendar clock. | Step-by-step guided prompt on capital spend, staffing relief, rate asks, and access pledges. | All first-time players. |
+| **Competitive Regional Market** (`competitive-regional-v1`) | 24 simulated monthly turns. | Action Point (AP) budgeting, simultaneous AI rivals, lagged public signals, multi-month capital projects. | Players ready for deep strategic planning. |
+| **Regional Affiliation** (`regional-affiliation-v1`) | 6 sequential institutional stages. | Assessment, posture (pursue/defer/independent), commitments, regulatory review, and integration models. | Players interested in healthcare M&A and governance. |
 
-At run end, you get replay verification and a debrief.
+---
 
-## Competitive campaign (`competitive-regional-v1`)
- 
- For each month in the 24-month campaign, you:
- 
- 1. Read the executive report.
- 2. Enter one command batch (Stata-like verbs).
- 3. Submit; AI rivals submit simultaneously.
- 4. Review resolution summary.
- 5. Repeat next month with updated conditions.
- 
- Note: the 24-month campaign features full autosave/resume, scenario loading, and replay export.
+## 1. Stabilization Tutorial (`stabilization-v1`)
 
-## Regional affiliation (`regional-affiliation-v1`)
+The tutorial is a 5-turn structured scenario that introduces the core tradeoffs
+of health system leadership:
 
-Across six stages, you assess a fictional nonprofit partner, choose an
-independence/defer/pursue posture, set community/workforce/continuity
-commitments when applicable, submit or await review, and choose an integration
-approach. The campaign keeps partner observations, assumptions, commitments,
-resolved review inputs, history, replay verification, and debrief output
-explicit.
-
-This is a bounded educational scenario, not legal, antitrust, valuation, or
-transaction advice.
-
-## Key terminology
-
-- `True state`: full modeled world state inside the engine.
-- `Observation`: what you (or another actor) are allowed to see.
-- `Resolved inputs`: seeded uncertainty values computed before transition.
-- `AP (action points)`: your monthly command-capacity budget (competitive).
-- `Political capital`: resource used by selected strategic commands.
-- `Simultaneous resolution`: all player monthly batches are resolved together.
-- `Replay`: deterministic re-check from genesis over committed history.
-- `Debrief`: end-of-run explanation of why outcomes happened.
-- `Decision quality`: whether your choice was reasonable with available info.
-- `Outcome quality`: what happened after all responses and uncertainty.
-
-For the full contributor/domain glossary, see `docs/reference/glossary.md`.
-
-## Commands
-
-## Stabilization input style
-
-Stabilization interactive prompts ask for integer fields per turn (for example,
-capital spend, access commitment, schedule relief). The prompt always shows:
-
-- exact field names,
-- valid ranges,
-- and a default command line you can accept.
-
-Use Enter to accept defaults where the prompt allows.
-
-## Competitive command cheat sheet
-
-Use `verb arg=value` syntax. You can chain commands with semicolons.
-
-Examples:
-
-```text
-invest domain=beds amount=25
-recruit role=nurse headcount=5
-monitor target=northlake depth=2
-negotiate payer=carrier_a rate_posture=neutral
-commit pledge_type=access level=3
-project kind=ehr_epic budget=60
-hold
+```
+[ Turn 1: Initial Allocation ] -> [ Turn 2: Workforce Pressure ] -> [ Turn 3: Payer Friction ]
+                                                                             |
+[ Turn 5: Final Review & Debrief ] <---------------- [ Turn 4: Community Scrutiny ]
 ```
 
-Batch example:
+### Turn Structure
+For each turn in the CLI:
+1. **Read Briefing & Observation:** Review current cash runway, bed occupancy,
+   workforce vacancy rates, and market signals.
+2. **Review Uncertainty Range:** View potential stochastic bounds.
+3. **Input Numeric Fields:** Enter the prompted values (e.g., `staffed_beds`,
+   `capital_spend`, `requested_rate`, `access_commitment`).
+4. **Accept Defaults with Enter:** If unsure, press Enter to accept the
+   recommended safe baseline.
+5. **Inspect Transition Resolution:** Observe how labor unions, commercial
+   payers, and community coalitions react.
+6. **End-of-Run Debrief:** Receive a full replay verification and causal
+   explanation of your performance.
 
-```text
-monitor target=summit depth=1; invest domain=outpatient amount=15
-```
+---
 
-Global/meta helpers in competitive prompt:
+## 2. Competitive Regional Market (`competitive-regional-v1`)
 
-- `help` or `?`: list command usage.
-- `Enter` on empty input: submit fallback batch.
-- `q`/`quit`/`exit`: quit the session.
+In this 24-month campaign, you lead your health system against autonomous AI
+rivals (**Summit Health**, **Northlake Regional**, **Valley Memorial**, and
+**Metro Health**).
 
-## Gameplay walkthrough (example interaction)
+### Difficulty Tiers & Action Point (AP) Budgets
+Every month you receive an **Action Point (AP)** budget that represents
+executive attention and bandwidth:
 
-Scenario: you are in competitive Month 2 on Normal difficulty.
+| Difficulty Tier | Active AI Rivals | Monthly AP Budget | Strategic Environment |
+| --- | --- | --- | --- |
+| **Easy** | 1 Rival (Summit Health) | **4 AP / month** | Ample management attention; low rival aggression. |
+| **Normal** | 2 Rivals (Summit + Northlake) | **3 AP / month** | Balanced regional competition. |
+| **Hard** | 3 Rivals (+ Valley Memorial) | **3 AP / month** | Tight market; rivals aggressively contest market share. |
+| **Expert** | 4 Rivals (+ Metro Health) | **2 AP / month** | Constrained executive bandwidth; high rival pressure. |
 
-Executive report highlights:
+---
 
-- Rival Northlake announced bed expansion last month.
-- Your cash runway shows `watch`.
-- Nursing vacancy remains elevated.
-- Consultant options suggest either fast bed investment or workforce-first.
+## ⌨️ Competitive Command Reference
 
-Your decision:
+Commands use a clean, Stata-like `verb arg=value` syntax. You can chain multiple
+commands in a single monthly batch separated by semicolons (`;`).
 
 ```text
 monitor target=northlake depth=1; recruit role=nurse headcount=4
 ```
 
-Why this can be strong:
+### Complete Command Catalog
 
-- `monitor` improves next-month intel before a larger capital move.
-- `recruit` addresses workforce pressure without immediate large cash burn.
-- You keep AP and cash flexibility if rivals escalate unexpectedly.
+| Verb | Syntax | AP Cost | Resource Draw | Description |
+| --- | --- | --- | --- | --- |
+| **`hold`** | `hold` | **0 AP** | None | Preserves resources and takes no action this month. |
+| **`invest`** | `invest domain=<domain> amount=<1..40>` | **1 AP** | $1M per amount | Deploys capital to a specific clinical service line. |
+| **`recruit`** | `recruit role=<role> headcount=<1..10>` | **1 AP** | Immediate hiring cost | Hires clinical or administrative staff; arrives after a 1-month onboarding delay. |
+| **`monitor`** | `monitor target=<target> depth=<1..3>` | **1 AP** | None | Gathers public and operational intelligence on a rival health system. |
+| **`negotiate`** | `negotiate payer=<payer> rate_posture=<posture>` | **1 AP** | Consumes Political Capital | Negotiates reimbursement rates with commercial or public payers. |
+| **`commit`** | `commit pledge_type=<type> level=<1..5>` | **1 AP** | Consumes Political Capital | Makes public institutional commitments for community access, clinical quality, or workforce. |
+| **`project`** | `project kind=<kind> budget=<amount>` | **2–3 AP** | Amortized monthly cash draw | Commences a large multi-month capital construction project (max 2 active projects). |
 
-Possible next-month follow-up:
+### Valid Parameter Values
 
+- **`domain` (for `invest`):**
+  `beds`, `outpatient`, `technology`, `emergency`, `icu`, `obstetrics`,
+  `psychiatric`, `cardiology`, `oncology`, `infusion`, `neurology`, `asc`
+- **`role` (for `recruit`):**
+  `nurse` (bedside RNs), `physician` (MD/DO specialists), `admin` (billing/ops)
+- **`target` (for `monitor`):**
+  `northlake`, `summit`, `valley`, `metro`
+- **`depth` (for `monitor`):**
+  `1` (basic public filings), `2` (service-line intelligence), `3` (deep posture & payer targets)
+- **`payer` (for `negotiate`):**
+  `carrier_a`, `carrier_b`, `medicaid`, `medicare`
+- **`rate_posture` (for `negotiate`):**
+  `aggressive` (high rate increase ask), `neutral` (inflation rate update), `conservative` (defensive rate concessions)
+- **`pledge_type` (for `commit`):**
+  `access` (charity care & clinic availability), `quality` (clinical safety standards), `workforce` (staffing ratios & support)
+- **`kind` (for `project`):**
+  - `ehr_epic` (12 months, 2 AP, modern EHR)
+  - `ehr_cerner` (12 months, 2 AP, alternative EHR)
+  - `tower` (12 months, 2 AP, patient bed tower)
+  - `clinic_network` (9 months, 2 AP, primary care clinics)
+  - `emergency_pavilion` (6 months, 2 AP, emergency department expansion)
+  - `icu_wing` (12 months, 3 AP, intensive care unit)
+  - `obstetrics_unit` (9 months, 2 AP, labor & delivery suites)
+  - `psychiatric_unit` (6 months, 2 AP, inpatient behavioral health)
+  - `cardiology_unit` (6 months, 2 AP, cardiac catheterization & care)
+  - `oncology_unit` (9 months, 3 AP, cancer treatment wing)
+  - `infusion_center` (6 months, 2 AP, outpatient chemotherapy & infusion)
+  - `neurology_unit` (6 months, 2 AP, stroke & neuro care)
+  - `asc_unit` (6 months, 2 AP, ambulatory surgical center)
+
+---
+
+## 3. Regional Affiliation (`regional-affiliation-v1`)
+
+This campaign models the evaluation of a potential merger or strategic
+partnership with an independent community hospital across 6 discrete stages:
+
+1. **Stage 1: Partner Assessment (`assess`):** Inspect partner clinical quality,
+   payer mix, debt load, and cultural alignment.
+2. **Stage 2: Strategic Posture (`posture`):** Choose whether to `pursue` a
+   formal partnership, `defer` pending further due diligence, or remain
+   `independent`.
+3. **Stage 3: Commitments & Governance (`commit`):** Define legally binding
+   promises regarding charity care levels, service preservation (e.g., keeping
+   rural maternity open), and workforce protections.
+4. **Stage 4: Regulatory & Community Review (`submit_review`):** Submit the
+   proposed transaction to state health department regulators and public
+   hearings.
+5. **Stage 5: Review Resolution & Integration (`integrate`):** Choose the
+   operational model: Full Asset Merger, Clinical Service Line Integration,
+   Loose Affiliation, or Mutual Termination.
+6. **Stage 6: Operational Debrief:** Review financial outcomes, workforce
+   morale, and community access consequences.
+
+---
+
+## 💡 Practical Beginner Walkthrough
+
+### Example Scenario: Month 2 in Competitive Regional Market (Normal Difficulty)
+
+**Your Monthly Executive Briefing Shows:**
+- Cash Runway: `watch` (5.2 months).
+- Nurse Vacancy: 14% (rising due to regional nurse shortage).
+- Intelligence Signal: Rival Summit Health filed permits for an outpatient
+  surgical center.
+- Monthly Budget: 3 AP available, $60M cash on hand.
+
+**Your Decision Batch:**
 ```text
-invest domain=beds amount=20
+monitor target=summit depth=1; recruit role=nurse headcount=4
 ```
 
-if intel confirms market-share risk and your runway improves.
+**Why this is a strong plan:**
+1. `monitor target=summit depth=1` (1 AP): Gathers exact intelligence on
+   Summit's project timeline so you can decide next month whether to counter
+   with your own Ambulatory Surgical Center (`asc_unit`).
+2. `recruit role=nurse headcount=4` (1 AP): Stabilizes the nursing vacancy rate
+   before staffing deficits trigger turnover penalties.
+3. You spent 2 AP out of 3 AP and preserved remaining cash, keeping flexibility
+   open for Month 3.
 
-Lesson: you are not trying to "solve" one month. You are managing tempo under
-uncertainty while preserving options.
+---
 
-## If the game feels too difficult
+## ❓ Frequently Asked Questions (FAQ)
 
-Use this triage playbook.
+### Q: I entered a command and received a syntax error. Did I waste my turn?
+**A:** No! Validation errors do not advance the simulation. The host reports the
+exact error and lets you re-enter a valid command batch.
 
-1. Protect capacity to respond:
-   - avoid spending all AP on one theme every month;
-   - keep at least one flexible action open when possible.
-2. Respect cash runway signals:
-   - if runway is `watch` or `strained`, prioritize lower-burn actions;
-   - delay large `project` or high `invest` commitments unless essential.
-3. Buy information before big commitments:
-   - use `monitor` when rival intent is unclear.
-4. Use `hold` strategically:
-   - a deliberate pass can be correct when information is weak and downside is high.
-5. Prefer reversible actions early:
-   - small recruit/invest steps often outperform one large irreversible bet.
-6. Focus on decision quality, not perfection:
-   - strong process beats chasing one "best" move that may not exist.
+### Q: Why did a sound decision still result in a margin drop?
+**A:** Regional epidemics, macro policy adjustments, and simultaneous rival
+actions create stochastic friction. Review the **Review Debrief** to evaluate
+your *Decision Quality* separately from *Outcome Quality*.
 
-## Practical beginner patterns
+### Q: How do I exit or save my session?
+**A:** Type `q`, `quit`, or `exit` in the CLI. The host automatically maintains
+immutable history and saves checkpoints.
 
-- Conservative month: `monitor` + light `recruit`.
-- Balanced month: medium `invest` + one legitimacy move (`commit`).
-- Information-first month: `monitor`, then adjust next month with better intel.
+---
 
-## Strategy notes from playtesting
+## 📖 Related Guides
 
-- Commercial rate asks work best when you have visible leverage. Reported access,
-  capacity, quality, and market context matter; a high rate posture by itself can
-  create relationship risk without improving your outside option.
-- Public access pledges can reduce scrutiny and build legitimacy, especially
-  when access pressure is visible. Repeating access pledges is not the same as
-  adding durable capacity, staffing, monitoring rivals, or improving payer
-  posture; use commitments with operational follow-through.
-- Recruitment is not instant capacity. Hiring spends cash immediately, resolves
-  after role-specific delays, and can strain workforce trust while the added
-  capacity is still pending.
-
-## FAQ and troubleshooting
-
-Q: I entered a command and got an error. Did I lose the month?  
-A: No. Validation errors do not advance the month; fix command syntax/limits and
-retry.
-
-Q: Why did a "good" decision still lead to a bad result?  
-A: Rival actions, delayed effects, and seeded uncertainty can produce adverse
-outcomes. Debrief helps separate decision quality from outcome quality.
-
-Q: Is competitive a full campaign already?  
-A: Yes. The competitive campaign loop runs for 24 months, with AI rivals, monthly events, and scenario loading.
-
-Q: I want a less overwhelming first run.  
-A: Start with `stabilization-v1` and beginner mode (`b`), then move to
-competitive once the loop feels familiar.
-
-## Learn more
-
-- Core loop: `docs/design/core-loop-spec.md`
-- Competitive gameplay spec: `docs/design/gameplay-competitive-sketch.md`
-- Command grammar draft: `docs/design/cli-command-grammar-draft.md`
-- Action catalog: `docs/design/action-catalog-draft.md`
-- Executive report schema: `docs/design/executive-report-format.md`
-- Glossary: `docs/reference/glossary.md`
+- [How to Play in GUI Mode](gui-how-to-play.md)
+- [Comprehensive Strategy & Mechanics Guide](strategy-and-mechanics.md)
+- [Glossary of Key Terms](../reference/glossary.md)
+- [Installation Guide](installation.md)
