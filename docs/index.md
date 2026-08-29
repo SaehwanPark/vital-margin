@@ -55,19 +55,9 @@ experienced strategists:
 Vital Margin features three distinct, standalone campaigns. Progress and
 checkpoints do not transfer between them:
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                                       VITAL MARGIN CAMPAIGNS                                      |
-+---------------------------------+---------------------------------+-------------------------------+
-|     STABILIZATION TUTORIAL      |   COMPETITIVE REGIONAL MARKET   |      REGIONAL AFFILIATION     |
-|       (stabilization-v1)        |    (competitive-regional-v1)    |   (regional-affiliation-v1)   |
-+---------------------------------+---------------------------------+-------------------------------+
-| - 5 abstract executive decisions| - 24 monthly decision turns     | - 6 institutional stages      |
-| - Guided first-run experience   | - Simultaneous AI rivals        | - Nonprofit merger/partner    |
-| - Teaches core tradeoffs        | - Monthly Action Points (AP)    | - Board & regulatory review   |
-| - Recommended first session     | - 4 Difficulty tiers            | - Commitments vs independence |
-+---------------------------------+---------------------------------+-------------------------------+
-```
+| Stabilization Tutorial (`stabilization-v1`) | Competitive Regional Market (`competitive-regional-v1`) | Regional Affiliation (`regional-affiliation-v1`) |
+| :--- | :--- | :--- |
+| • 5 abstract executive decisions<br>• Guided first-run experience<br>• Teaches core tradeoffs<br>• **Recommended first session** | • 24 monthly decision turns<br>• Simultaneous local AI rivals<br>• Monthly Action Points (AP) budget<br>• 4 Difficulty tiers (Easy–Expert) | • 6 institutional stages<br>• Nonprofit partner evaluation<br>• Board & regulatory review<br>• Commitments vs. independence |
 
 ### 1. Stabilization Tutorial (`stabilization-v1`)
 - **Length:** 5 abstract executive decisions (no calendar clock).

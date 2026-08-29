@@ -1,5 +1,9 @@
 # Strategy & Mechanics Guide
 
+[Documentation Home](../index.md) | [Installation Guide](installation.md) | [GUI Guide](gui-how-to-play.md) | [CLI Guide](how-to-play.md) | [Glossary](../reference/glossary.md)
+
+---
+
 This guide provides an in-depth strategic framework for leading your health
 system across the **Competitive Regional Market** (`competitive-regional-v1`),
 **Stabilization Tutorial** (`stabilization-v1`), and **Regional Affiliation**
@@ -13,16 +17,13 @@ In Vital Margin, you cannot optimize a single metric in isolation. Real-world
 health systems operate under the constant friction of competing institutional
 goals:
 
-```
-               [ FINANCIAL SOLVENCY ]
-              /                      \
-             /                        \
-            /                          \
-[ WORKFORCE STABILITY ] -------- [ COMMUNITY ACCESS & TRUST ]
-            \                          /
-             \                        /
-              \                      /
-             [ COMPETITIVE MARKET SHARE ]
+```mermaid
+graph TD
+  FS[Financial Solvency & Margins] --- WS[Workforce Stability & Morale]
+  FS --- CA[Community Access & Trust]
+  WS --- MS[Competitive Market Share]
+  CA --- MS
+  WS --- CA
 ```
 
 - **Increasing margins** via aggressive commercial rate demands can trigger
@@ -226,19 +227,10 @@ Use these decision trees when facing operational crises:
 At the conclusion of each campaign (or in the Review workspace), Vital Margin
 generates a comprehensive causal debrief.
 
-```
-+-------------------------------------------------------------------------------+
-|                             END-OF-RUN DEBRIEF                                |
-|                                                                               |
-|  Decision Quality: HIGH (88%)      Outcome Quality: MODERATE (72%)            |
-|                                                                               |
-|  Summary:                                                                     |
-|  - Maintained healthy 6.2-month cash runway throughout all 24 months.         |
-|  - Successfully contained nurse vacancy below 8% through steady recruiting.   |
-|  - Outpatient margin compressed due to simultaneous rival ASC entry in Mo 8.  |
-|  - Strong public access score backed by $45M in durable community clinics.    |
-+-------------------------------------------------------------------------------+
-```
+| Metric Evaluation | Score / Classification | Key Causal Drivers |
+| :--- | :--- | :--- |
+| **Decision Quality** | **HIGH (88%)** | • Maintained healthy 6.2-month cash runway throughout all 24 months.<br>• Successfully contained nurse vacancy below 8% through steady recruiting.<br>• Backed public access commitments with $45M in durable community clinic capacity. |
+| **Outcome Quality** | **MODERATE (72%)** | • Outpatient procedure margin compressed due to simultaneous rival ASC market entry in Month 8.<br>• Commercial payer pushback during annual contract renewal. |
 
 ### Key Lesson: Decision Quality vs. Outcome Quality
 - **Decision Quality:** Evaluates whether your moves were logical, timely, and
